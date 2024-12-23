@@ -1,6 +1,5 @@
 import React from "react";
 import { Product } from "@/types";
-import Link from "next/link";
 
 interface ProductListProps {
   products: Product[];
