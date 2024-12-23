@@ -24,12 +24,12 @@ export const Products: React.FC = () => {
   const handleOpenModal = useCallback((product: Product) => {
     setSelectedProduct(product);
     router.push(`/products?product-id=${product.id}`)
-  }, []);
+  }, [router]);
 
   const handleCloseModal = useCallback(() => {
     setSelectedProduct(null);
     router.push(`/products`)
-  }, []);
+  }, [router]);
 
   useEffect(() => {
     if (searchParams.get("product-id")) {
@@ -38,7 +38,7 @@ export const Products: React.FC = () => {
         setSelectedProduct(initialProductUsingQuery);
       }
     }
-  }, []);
+  }, [searchParams]);
 
   return (
     <div>
